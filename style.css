@@ -1,0 +1,246 @@
+/* === CSS Variables === */
+:root {
+    --primary-color: #2a70e0;
+    --secondary-color: #1c3d80;
+    --accent-color: #00c9a7;
+    --bg-light: #f4f7fa;
+    --bg-dark: #1e1e2f;
+    --text-dark: #2c2c2c;
+    --text-light: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --container-width: 90%;
+    --max-width: 1200px;
+  }
+  
+  /* === Base Reset === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background: #ffffff;
+    line-height: 1.6;
+  }
+  
+  img {
+    
+    max-width: 50%;
+    display: block;
+    
+  }
+  
+  .container {
+    width: var(--container-width);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+  
+  /* === Header === */
+  .header {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: var(--shadow);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-light);
+  }
+  
+  .logo span {
+    color: var(--accent-color);
+  }
+  
+  .navigation .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* === Hero Section === */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: linear-gradient(to right, var(--bg-light), #eaf3fc);
+    padding-top: 100px;
+    gap: 2rem;
+  }
+  
+  .hero-text {
+    flex: 1 1 500px;
+  }
+  
+  .hero-text h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .hero-buttons {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .hero-image {
+    flex: 1 1 400px;
+    position: relative;
+    
+  }
+  
+  .hero-image img {
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    
+  }
+  
+  /* === Buttons === */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn:hover {
+    background: var(--secondary-color);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  /* === About, Projects, Skills === */
+  .skills-grid, .project-list, .timeline, .contact-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .skills-grid ul {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  
+  .project-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .project {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+  
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+  
+  /* === Contact === */
+  .contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+  }
+  
+  .contact-form button {
+    width: fit-content;
+  }
+  
+  /* === Footer === */
+  .footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+  }
+  
